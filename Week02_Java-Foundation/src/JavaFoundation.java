@@ -28,7 +28,7 @@ public class JavaFoundation {
     public static void demonstrateEscapeCharacters() {
         System.out.println("\n=== 转义字符演示 ===");
         System.out.println("姓名\t性别\t籍贯\t住址");
-        System.out.println("那王\t超凡\t神圣\t黑暗");
+        System.out.println("邪王\t超凡\t神圣\t黑暗");
     }
     
     /**
