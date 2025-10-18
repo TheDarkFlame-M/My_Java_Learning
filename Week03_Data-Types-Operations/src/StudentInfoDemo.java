@@ -1,6 +1,6 @@
 /**
- * µÚ03ÖÜ£ºÑ§ÉúĞÅÏ¢Êä³öÑİÊ¾
- * Õ¹Ê¾±äÁ¿¶¨ÒåºÍ¸ñÊ½»¯Êä³ö
+ * ç¬¬03å‘¨ï¼šå­¦ç”Ÿä¿¡æ¯è¾“å‡ºæ¼”ç¤º
+ * å±•ç¤ºå˜é‡å®šä¹‰å’Œæ ¼å¼åŒ–è¾“å‡º
  */
 public class StudentInfoDemo {
     public static void main(String[] args) {
@@ -8,20 +8,20 @@ public class StudentInfoDemo {
     }
     
     /**
-     * ÑİÊ¾Ñ§ÉúĞÅÏ¢Êä³ö
-     * À´Ô´£ºhomework04.java - Ñ§ÉúĞÅÏ¢Á·Ï°
+     * æ¼”ç¤ºå­¦ç”Ÿä¿¡æ¯è¾“å‡º
+     * æ¥æºï¼šhomework04.java - å­¦ç”Ÿä¿¡æ¯ç»ƒä¹ 
      */
     public static void demonstrateStudentInfo() {
-        System.out.println("=== Ñ§ÉúĞÅÏ¢Êä³öÑİÊ¾ ===");
+        System.out.println("=== å­¦ç”Ÿä¿¡æ¯è¾“å‡ºæ¼”ç¤º ===");
         
-        String name = "ÄÇÍõÕæÑÛ";
+        String name = "é‚ªç‹çœŸçœ¼";
         short age = 1872;
-        String score = "A¼¶";
-        String gender = "³¬·²";  // ĞŞÕıÁË±äÁ¿Ãû
-        String goal = "Ñ¡ÔñÊÀ½ç·¨Ôò£¬Ñ°ÕÒ²»¿ÉÓâÒÚ¾³½çÏß";
+        String score = "Açº§";
+        String gender = "è¶…å‡¡";  // ä¿®æ­£äº†å˜é‡å
+        String goal = "è§„é¿ä¸–ç•Œæ³•åˆ™ï¼Œå¯»æ‰¾ä¸å¯è¿½å¿†å¢ƒç•Œçº¿";
         
-        // Ê¹ÓÃ×ªÒå×Ö·ûºÍÆ´½Ó¸ñÊ½»¯Êä³ö
-        System.out.println("ĞÕÃû\t\tÄêÁä\t³É¼¨\tĞÔ±ğ\tÄ¿±ê");
+        // ä½¿ç”¨è½¬ä¹‰å­—ç¬¦å’Œæ‹¼æ¥æ ¼å¼åŒ–è¾“å‡º
+        System.out.println("å§“å\t\tå¹´é¾„\tæˆç»©\tæ€§åˆ«\tç›®æ ‡");
         System.out.println(name + "\t" + age + "\t" + score + "\t" + gender + "\t" + goal);
     }
 }
