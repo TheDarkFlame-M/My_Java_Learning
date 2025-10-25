@@ -16,7 +16,6 @@
 **一步完成**：`int a = 60;`
 
 ### 3.2 变量快速入门
-
 public class Var02 {
     public static void main(String[] args) {
         // 记录人的信息
@@ -208,3 +207,4 @@ public class StringToBasicDetail {
 4. 掌握String与基本类型的相互转换
 
 5. 注意浮点数的精度问题
+
