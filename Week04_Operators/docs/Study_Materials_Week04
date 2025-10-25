@@ -1,0 +1,289 @@
+# 第4章 运算符
+
+## 4.1 运算符介绍
+运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。
+
+**分类：**
+- 算术运算符
+- 赋值运算符  
+- 关系运算符（比较运算符）
+- 逻辑运算符
+- 位运算符（需要二进制基础）
+- 三元运算符
+
+## 4.2 算术运算符
+
+### 4.2.1 算术运算符一览
+| 运算符 | 运算 | 示例 | 结果 |
+|--------|------|------|------|
+|  `+`   | 正号 | `+7` |   7  |
+|  `-`   | 负号 | `-7` |  -7  |
+|  `+`   | 加   | `5+5`|  10  |
+|  `-`   | 减   | `6-4`|   2  |
+|  `*`   | 乘   | `3*4`|  12  |
+|  `/`   | 除   | `5/2`|   2  |
+|  `%`   | 取模 | `7%3`|   1  |
+|  `++`  | 自增 | `a=2; a++` | 3 |
+|  `--`  | 自减 | `a=2; a--` | 1 |
+
+### 4.2.2 代码示例
+public class ArithmeticOperator {
+    public static void main(String[] args) {
+        // 除法运算
+        System.out.println(10 / 4);     // 2
+        System.out.println(10.0 / 4);   // 2.5
+        
+        // 取模运算
+        System.out.println(10 % 3);     // 1
+        System.out.println(-10 % 3);    // -1
+        
+        // 自增运算
+        int i = 10;
+        i++;    // i = 11
+        ++i;    // i = 12
+        System.out.println("i=" + i);   // 12
+    }
+}
+
+### 4.2.3 细节说明
+1. 整数相除结果仍是整数，小数部分被截断
+2. 取模公式：a % b = a - a / b * b
+3. 前++：先自增后使用；后++：先使用后自增
+
+### 4.3 关系运算符（比较运算符）
+
+### 4.3.1 关系运算符一览
+运算符 	  运算 	  示例	 结果
+  ==	 相等于   8==7   false
+  !=	 不等于   8!=7   true
+  <		 小于 	  8<7    false
+  >	 	 大于     8>7    true
+  <=     小于等于 8<=7   false
+  >=     大于等于 8>=7   true
+
+### 4.3.2 代码示例
+public class RelationalOperator {
+    public static void main(String[] args) {
+        int a = 9;
+        int b = 8;
+        System.out.println(a > b);   // true
+        System.out.println(a >= b);  // true
+        System.out.println(a == b);  // false
+        System.out.println(a != b);  // true
+        
+        boolean flag = a > b;
+        System.out.println("flag=" + flag);  // flag=true
+    }
+}
+
+### 4.3.3 注意事项
+1. 关系运算符的结果都是boolean型（true或false）
+2. 关系运算符组成的表达式称为关系表达式
+3. 比较运算符"=="不能误写成"="
+
+### 4.4 逻辑运算符
+
+### 4.4.1 逻辑运算符分类
+第一组（短路）：
+&& - 短路与
+|| - 短路或
+! - 取反
+
+第二组（逻辑）：
+& - 逻辑与
+| - 逻辑或
+^ - 逻辑异或
+
+### 4.4.2 运算规则
+运算符		名称		运算规则
+a & b		逻辑与		a和b同时为true，结果为true
+a && b		短路与		a和b同时为true，结果为true
+a | b		逻辑或		a和b有一个为true，结果为true
+a & b		短路或		a和b有一个为true，结果为true
+ !a			取反		a为true则false，a为false则true
+a ^ b		逻辑异或	a和b不同时结果为true
+
+### 4.4.3 代码示例
+public class LogicOperator01 {
+    public static void main(String[] args) {
+        // && 和 & 的区别
+        int age = 50;
+        if(age > 20 && age < 90) {
+            System.out.println("ok100");  // 输出
+        }
+        
+        int a = 4;
+        int b = 9;
+        // &&短路与：第一个条件为false，第二个条件不判断
+        if(a < 1 && ++b < 50) {
+            System.out.println("ok300");
+        }
+        System.out.println("a=" + a + " b=" + b);  // a=4 b=9
+    }
+}
+
+### 4.4.4 使用区别
+• 短路与&&：第一个条件为false时，第二个条件不判断，效率高
+• 逻辑与&：无论第一个条件如何，第二个条件都要判断，效率低
+• 开发中推荐使用短路运算符 
+
+### 4.5 赋值运算符
+
+### 4.5.1 分类
+• 基本赋值运算符：=
+• 复合赋值运算符：+=、-=、*=、/=、%=
+
+### 4.5.2 代码示例
+public class AssignOperator {
+    public static void main(String[] args) {
+        int n1 = 10;
+        n1 += 4;  // n1 = n1 + 4
+        System.out.println(n1);  // 14
+        
+        n1 /= 3;  // n1 = n1 / 3
+        System.out.println(n1);  // 4
+        
+        // 复合赋值运算符会进行类型转换
+        byte b = 3;
+        b += 2;  // 等价 b = (byte)(b + 2)
+    }
+}
+
+### 4.5.3 特点
+1. 运算顺序从右往左
+2. 左边只能是变量，右边可以是变量、表达式、常量值
+3. 复合赋值运算符会进行类型转换
+
+### 4.6 三元运算符
+
+###4.6.1 基本语法
+条件表达式 ? 表达式1 : 表达式2;
+
+### 4.6.2 运算规则
+• 条件表达式为true，结果为表达式1
+• 条件表达式为false，结果为表达式2
+
+### 4.6.3 代码示例
+public class TernaryOperator {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 99;
+        
+        int result = a > b ? a++ : b--;
+        System.out.println("result=" + result);  // 99
+        System.out.println("a=" + a);           // 10
+        System.out.println("b=" + b);           // 98
+    }
+}
+
+### 4.6.4 使用细节
+1. 表达式1和表达式2要为可以赋给接收变量的类型
+2. 三元运算符可以转成if-else语句
+
+### 4.7 运算符优先级
+
+### 4.7.1 优先级规则
+1. 括号 () 优先级最高
+2. 单目运算符 !、++、--
+3. 算术运算符 *、/、% → +、-
+4. 关系运算符 >、<、>=、<= → ==、!=
+5. 逻辑运算符 && → ||
+6. 赋值运算符 =
+
+### 4.7.2 记忆技巧
+• 括号优先，算术其次
+• 关系比较，逻辑判断
+• 赋值最后，从右向左
+
+### 4.8 进制转换
+
+### 4.8.1 四种进制表示
+public class BinaryTest {
+    public static void main(String[] args) {
+        int n1 = 0b1010;    // 二进制
+        int n2 = 01010;     // 八进制
+        int n3 = 1010;      // 十进制
+        int n4 = 0x10101;   // 十六进制
+        
+        System.out.println("n1=" + n1);  // 10
+        System.out.println("n2=" + n2);  // 520
+        System.out.println("n3=" + n3);  // 1010
+        System.out.println("n4=" + n4);  // 65793
+    }
+}
+
+### 4.8.2 进制前缀
+• 二进制：0b 或 0B
+• 八进制：0 开头
+• 十六进制：0x 或 0X
+
+### 4.9 位运算符
+
+### 4.9.1 位运算符一览
+运算符 	 	运算 		描述
+  &     	按位与  	两位都为1，结果为1
+  | 		按位或 		两位有一个为1，结果为1
+  ^ 		按位异或 	两位不同，结果为1
+  ~ 		按位取反 	0变1，1变0
+  >> 		算术右移 	低位溢出，符号位不变
+  << 		算术左移 	符号位不变，低位补0
+  >>> 		逻辑右移	低位溢出，高位补0
+
+### 4.9.2 代码示例
+public class BitOperator {
+    public static void main(String[] args) {
+        // 位运算示例
+        int a = 1 >> 2;   // 0
+        int b = 1 << 2;   // 4
+        int c = 3 >>> 2;  // 0
+        
+        System.out.println("a=" + a);  // 0
+        System.out.println("b=" + b);  // 4
+        System.out.println("c=" + c);  // 0
+    }
+}
+
+### 4.10 键盘输入语句
+
+### 4.10.1 使用步骤
+1. 导入Scanner类：import java.util.Scanner;
+2. 创建Scanner对象
+3. 调用相关方法接收输入
+
+### 4.10.2 代码示例
+import java.util.Scanner;
+
+public class Input {
+    public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in);
+        
+        System.out.println("请输入名字：");
+        String name = myScanner.next();
+        
+        System.out.println("请输入年龄：");
+        int age = myScanner.nextInt();
+        
+        System.out.println("请输入战斗值：");
+        double CP = myScanner.nextDouble();
+        
+        System.out.println("名字=" + name + " 年龄=" + age + " 战斗值=" + CP);
+    }
+}
+
+### 4.11 本章重点总结
+
+### 4.11.1 核心知识点
+1. 算术运算符：注意整数除法和取模运算
+2. 关系运算符：结果都是boolean类型
+3. 逻辑运算符：掌握短路与&&和短路或||
+4. 赋值运算符：复合赋值运算符会类型转换
+5. 三元运算符：条件?值1:值2
+6. 位运算符：了解基本位操作
+
+### 4.11.2 易错点
+1. 整数相除会截断小数部分
+2. 比较运算符"=="不要写成赋值运算符"="
+3. 前++和后++的区别
+4. 短路运算符的效率优势
+
+^文件说明：本章主要学习Java各种运算符的使用规则和注意事项，重点掌握算术运算、逻辑运算和三 元运算符的实际应用
