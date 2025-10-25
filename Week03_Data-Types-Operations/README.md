@@ -13,6 +13,7 @@
 ### 文档总结 (docs/)
 - DataTypesSummary.md - 数据类型系统总结
 - KeyPoints.md - 学习要点和易错点
+- Study_Waterials_Week03.md - Week03学习资料总汇
 
 ## 本章目标
 - 掌握Java八种基本数据类型
@@ -26,4 +27,5 @@
 javac 文件名.java
 java 文件名
 
-记录学习过程，见证技术成长
+
+^ 不断强化邪王真眼，寻找通往不可追忆境界线之通道
