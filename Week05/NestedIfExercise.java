@@ -17,7 +17,7 @@ public class NestedIfExercise {
         // 时空扫描器初始化
         Scanner myScanner = new Scanner(System.in);
         
-        System.out.println("🌊 请选择时间流密度(淡季/旺季):");
+        System.out.println("请选择时间流密度(淡季/旺季):");
         String seasonStr = myScanner.next();
         
         // 第一重境界线：季节维度判定
@@ -64,4 +64,5 @@ public class NestedIfExercise {
         // 时空注记：关闭扫描器防止能量泄露
         myScanner.close();
     }
+
 }
